@@ -3,11 +3,11 @@ import Image from "next/image";
 
 const collaborators = [
   {
-    name: "Nome Collaboratore",
-    role: "DJ / Producer",
-    description: "Breve descrizione del collaboratore, stile e background.",
-    genre: "Tech House",
-    img: "",
+    name: "FIDE",
+    role: "DJ & Producer",
+    description: "Federica Nigro fonde elettronica cinematica e sonorità anni '80 con melodie evocative di chitarra e pianoforte. Ha iniziato a produrre nel 2024, costruendo un sound riconoscibile che attraversa generi ed emozioni.",
+    genre: "Electronic · Cinematic",
+    img: "/collaboratore1.jpg",
   },
   {
     name: "Nome Collaboratore",
