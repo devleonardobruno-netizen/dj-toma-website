@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import CookieReset from "@/components/CookieReset";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | DJ TOMA",
@@ -87,17 +88,7 @@ export default function CookiePolicyPage() {
               Puoi modificare o revocare il tuo consenso in qualsiasi momento svuotando i dati del browser
               oppure cliccando sul pulsante qui sotto per reimpostare le preferenze cookie.
             </p>
-            <button
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  localStorage.removeItem("cookie_consent");
-                  window.location.reload();
-                }
-              }}
-              className="mt-4 px-5 py-2.5 rounded-xl text-sm glass text-purple-400 border-purple-500/30 hover:border-purple-500/60 transition-all"
-            >
-              Reimposta preferenze cookie
-            </button>
+            <CookieReset />
           </section>
 
           <section className="glass rounded-2xl p-6">
