@@ -37,6 +37,12 @@ export default function Footer() {
         <div className="mt-8 pt-6 border-t border-purple-500/10 flex flex-col sm:flex-row justify-between gap-2 text-xs text-slate-700">
           <span>© {new Date().getFullYear()} DJ TOMA — Tutti i diritti riservati · Puglia, Italia</span>
           <div className="flex gap-4">
+            <a href="https://www.brunoleonardo.it/it" target="_blank" rel="noopener noreferrer"
+              className="hover:text-purple-400 transition-colors">
+              Sito creato da Leonardo Bruno
+            </a>
+          </div>
+          <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-purple-400 transition-colors">Privacy Policy</Link>
             <Link href="/cookie-policy" className="hover:text-purple-400 transition-colors">Cookie Policy</Link>
           </div>

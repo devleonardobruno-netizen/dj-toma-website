@@ -8,27 +8,23 @@ const collaborators = [
     description: "Federica Nigro fonde elettronica cinematica e sonorità anni '80 con melodie evocative di chitarra e pianoforte. Ha iniziato a produrre nel 2024, costruendo un sound riconoscibile che attraversa generi ed emozioni.",
     genre: "Electronic · Cinematic",
     img: "/collaboratore1.jpg",
+    imgPosition: "object-center",
   },
   {
-    name: "Nome Collaboratore",
-    role: "DJ Resident",
-    description: "Breve descrizione del collaboratore, stile e background.",
-    genre: "Deep House",
-    img: "",
+    name: "Ross PK",
+    role: "DJ",
+    description: "Specializzata in house music old school, porta in console un sound autentico e senza tempo. Suona con giradischi e vinili timecode, spaziando tra classici intramontabili e gemme underground per creare vibrazioni calde, groove profondi e un'esperienza che richiama le radici più pure della cultura house.",
+    genre: "Old School House",
+    img: "/collaboratore2.jpg",
+    imgPosition: "object-top",
   },
   {
-    name: "Nome Collaboratore",
-    role: "DJ / Vocalist",
-    description: "Breve descrizione del collaboratore, stile e background.",
-    genre: "Commercial",
-    img: "",
-  },
-  {
-    name: "Nome Collaboratore",
-    role: "DJ / Promoter",
-    description: "Breve descrizione del collaboratore, stile e background.",
-    genre: "Progressive",
-    img: "",
+    name: "Andrea",
+    role: "DJ & Producer",
+    description: "A soli 16 anni sperimenta l'elettronica in tutte le sue forme, dall'acustica al digitale fino ai sistemi programmabili. Il primo incontro con la dubstep lo spinge alla scoperta di nuovi sottogeneri, cercando un continuo groove tra UK House e Bass House.",
+    genre: "UK House · Bass House",
+    img: "/collaboratore3.jpg",
+    imgPosition: "object-left",
   },
 ];
 
@@ -55,7 +51,7 @@ export default function CollaboratorsSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {collaborators.map((c, i) => (
             <div
               key={i}
@@ -68,8 +64,8 @@ export default function CollaboratorsSection() {
                     src={c.img}
                     alt={c.name}
                     fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, 25vw"
+                    className={`object-cover transition-transform duration-500 group-hover:scale-105 ${c.imgPosition ?? "object-center"}`}
+                    sizes="(max-width: 640px) 50vw, 33vw"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center">
@@ -81,11 +77,14 @@ export default function CollaboratorsSection() {
                   </div>
                 )}
                 {/* Genre badge */}
-                <div className="absolute bottom-3 left-3">
-                  <span className="text-xs px-2.5 py-1 rounded-full glass text-cyan-400 border-cyan-500/20">
-                    {c.genre}
-                  </span>
-                </div>
+                {c.genre && (
+                  <div className="absolute bottom-3 left-3">
+                    <span className="text-xs px-3 py-1.5 rounded-full font-medium text-white"
+                      style={{ background: "rgba(109,40,217,0.85)", backdropFilter: "blur(8px)" }}>
+                      {c.genre}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Info */}
